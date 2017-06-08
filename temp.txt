@@ -1,0 +1,19 @@
+ ctx.beginPath();
+            ctx.rect(20,40,50,50);
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.closePath();
+            
+            ctx.beginPath();//beginpath, closepath메소드 사이에 모든 명령어가 들어감.
+            //ctx.rect(20, 40, 50, 50); 직사각형 정의, 죄측에서 떨어진 픽셀, 상단에서 떨어진 픽셀, 너비, 높이
+            //원을 그리는 경우 ctx.arc(240, 160, 20, 0,Math.PI*2,false);
+            ctx.arc(240, 160, 20, 0,Math.PI*2,false);
+            ctx.fillStyle = "green";//사각형의 색깔
+            ctx.fill();
+            ctx.closePath();
+            
+            ctx.beginPath();
+            ctx.rect(160, 10, 100, 40);
+            ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+            ctx.stroke();
+            ctx.closePath();
