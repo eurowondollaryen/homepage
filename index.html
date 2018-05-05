@@ -61,7 +61,7 @@
             <h1>Sayho's portfolio</h1>
             <h3>Developing Steady</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">I want to see it</a>
+            <a href="#about" class="btn btn-dark btn-lg">Descriptions below</a>
         </div>
     </header>
 
@@ -97,7 +97,7 @@
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
-            <h1>Projects in progress..</h1>
+            <h1>Projects</h1>
         </div>
     </aside>
 
@@ -106,44 +106,61 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Project - IoT safe with Arduino</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-                                </a>
-                            </div>
+                   
+                    <div>
+                        <div class ="project_title">
+                            <h2 onmouseover="this.style.backgroundColor='beige';" onmouseout="this.style.backgroundColor='white';">
+                                <hr class="middle">Project - IoT safe with Arduino<hr class="middle">
+                            </h2>
                         </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
-                                </a>
+                        <div class ="elements">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#">
+                                        <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#">
+                                        <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            
+                            <hr class="middle">   
                         </div>
                     </div>
+                    <div>
+                        <div class ="project_title">
+                            <h2 onmouseover="this.style.backgroundColor='beige';" onmouseout="this.style.backgroundColor='white';">
+                                <hr class="middle">Project - AR Room Escape Game<hr class="middle">
+                            </h2>
+                        </div>
+                        <div class ="elements">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <video width="400" controls>
+                                      <source src="img/Grad1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="col-md-6">
+                                    <video width="400" controls>
+                                      <source src="img/Grad2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <hr class="middle">   
+                        </div>
+                    </div>
+                    
+                    
                     <!-- /.row (nested) -->
-                    <a href="./codepage.html" class="btn btn-dark">View More Items</a>
+                    <a href="./codepage.html" class="btn btn-dark">Move to lab</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
             <!-- /.row -->
         </div>
         <!-- /.container -->
-    </section>
-
-    <!-- Map -->
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
     </section>
 
     <!-- Footer -->
@@ -154,20 +171,7 @@
                     <h4><strong>Other informations..</strong>
                     </h4>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
                         <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:dollarbucks@pusan.ac.kr">dollarbucks@pusan.ac.kr</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=100006435920672"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -183,6 +187,29 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    var elements = document.getElementsByTagName("div");
+    // 모든 영역 접기
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].className == "elements") {
+        elements[i].style.display="none";
+      } else if (elements[i].className == "project_title") {
+        elements[i].onclick=switchDisplay;
+      }
+    }
+    // 상태에 따라 접거나 펼치기
+    function switchDisplay() {
+      var parent = this.parentNode;
+      var target = parent.getElementsByTagName("div")[1];
+      if (target.style.display == "none") {
+        target.style.display="block";
+      } else {
+        target.style.display="none";
+      }
+      return false;
+    }
+    </script>
+    
 
     <!-- Custom Theme JavaScript -->
     <script>
